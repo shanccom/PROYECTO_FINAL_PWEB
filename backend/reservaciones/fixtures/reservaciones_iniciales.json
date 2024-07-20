@@ -1,0 +1,62 @@
+[
+    {
+        "model": "reservaciones.reservacion",
+        "pk": 1,
+        "fields": {
+            "usuario": 1,  
+            "cuarto": 1,
+            "fecha_inicio": "2024-07-20T15:00:00Z",
+            "fecha_fin": "2024-07-23T11:00:00Z"
+        }
+    },
+    {
+        "model": "reservaciones.reservacion",
+        "pk": 2,
+        "fields": {
+            "usuario": 1,  
+            "cuarto": 2,
+            "fecha_inicio": "2024-07-22T12:00:00Z",
+            "fecha_fin": "2024-07-25T10:00:00Z"
+        }
+    },
+    {
+        "model": "reservaciones.reservacion",
+        "pk": 3,
+        "fields": {
+            "usuario": 1,  
+            "cuarto": 3,
+            "fecha_inicio": "2024-07-25T15:00:00Z",
+            "fecha_fin": "2024-07-30T11:00:00Z"
+        }
+    },
+    {
+        "model": "reservaciones.reservacion",
+        "pk": 4,
+        "fields": {
+            "usuario": 1, 
+            "cuarto": 4,
+            "fecha_inicio": "2024-07-28T10:00:00Z",
+            "fecha_fin": "2024-07-29T11:00:00Z"
+        }
+    },
+    {
+        "model": "reservaciones.reservacion",
+        "pk": 5,
+        "fields": {
+            "usuario": 1, 
+            "cuarto": 5,
+            "fecha_inicio": "2024-07-20T15:00:00Z",
+            "fecha_fin": "2024-07-30T11:00:00Z"
+        }
+    },
+    {
+        "model": "reservaciones.reservacion",
+        "pk": 6,
+        "fields": {
+            "usuario": 1, 
+            "cuarto": 6,
+            "fecha_inicio": "2024-07-22T12:00:00Z",
+            "fecha_fin": "2024-07-25T10:00:00Z"
+        }
+    }
+]

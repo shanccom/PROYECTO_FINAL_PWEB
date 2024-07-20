@@ -2,8 +2,8 @@ import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,6 @@ export class AuthService {
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
-    // Verifica si hay un token en el localStorage al iniciar
     if (this.isBrowser) {
       this.isAuthenticated.next(!!localStorage.getItem('token'));
     }
@@ -27,12 +26,24 @@ export class AuthService {
 
   // Registro de usuario
   register(userData: { username: string; email: string; password: string; password2: string }): Observable<any> {
-    return this.http.post<any>(this.apiUrl + 'register/', userData);
+    return this.http.post<any>(this.apiUrl + 'register/', userData).pipe(
+      tap(response => {
+        if (response && response.token) {
+          this.setSession(response.token);
+        }
+      })
+    );
   }
 
   // Inicio de sesión
   login(credentials: { username: string; password: string }): Observable<any> {
-    return this.http.post<any>(this.apiUrl + 'login/', credentials);
+    return this.http.post<any>(this.apiUrl + 'login/', credentials).pipe(
+      tap(response => {
+        if (response && response.token) {
+          this.setSession(response.token);
+        }
+      })
+    );
   }
 
   // Guardar el token en localStorage y actualizar el estado de autenticación

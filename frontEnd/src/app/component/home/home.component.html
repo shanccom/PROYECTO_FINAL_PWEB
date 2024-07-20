@@ -1,9 +1,22 @@
 
 <div *ngIf="isAuthenticated; else loggedOutContent">
-<h1>Welcome to the Home Page</h1>
-<p>You are logged in.</p>
-<button (click)="logout()">Cerrar sesión</button>
-<!-- Agrega aquí el contenido que debe ser visible para los usuarios autenticados -->
+    <h1>Welcome to the Home Page</h1>
+        <p>You are logged in.</p>
+    <button (click)="logout()">Cerrar sesión</button>
+    <div class="reservas-container">
+        <div>
+            <h1>Tipos de Cuartos</h1>
+                <ul>
+                    <li *ngFor="let tipo of tiposDeCuartos" (click)="onTipoSeleccionado(tipo.id)">
+                        <h2>Tipo {{ tipo.id }}</h2>
+                        <p>Nombre: {{ tipo.nombre }}</p>
+                        <p>Precio: {{ tipo.precio_por_noche | currency }}</p>
+                        <p>Descripción: {{ tipo.descripcion }}</p> 
+                    </li>
+                </ul>
+        
+        </div>
+    </div>
 </div>
 
 <ng-template #loggedOutContent>

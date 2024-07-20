@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     ## APPS PROPIAS 
     'usuarios',
+    'reservaciones',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',

@@ -1,0 +1,77 @@
+[
+    {
+        "model": "reservaciones.tipocuarto",
+        "pk": 1,
+        "fields": {
+            "nombre": "Suite Deluxe",
+            "descripcion": "Una suite de lujo con todas las comodidades.",
+            "precio_por_noche": "200.00"
+        }
+    },
+    {
+        "model": "reservaciones.tipocuarto",
+        "pk": 2,
+        "fields": {
+            "nombre": "Habitación Estándar",
+            "descripcion": "Habitación cómoda y funcional.",
+            "precio_por_noche": "100.00"
+        }
+    },
+    {
+        "model": "reservaciones.tipocuarto",
+        "pk": 3,
+        "fields": {
+            "nombre": "Suite Ejecutiva",
+            "descripcion": "Suite con espacio adicional para trabajar.",
+            "precio_por_noche": "150.00"
+        }
+    },
+    {
+        "model": "reservaciones.cuarto",
+        "pk": 1,
+        "fields": {
+            "tipo": 1,
+            "numero": "101"
+        }
+    },
+    {
+        "model": "reservaciones.cuarto",
+        "pk": 2,
+        "fields": {
+            "tipo": 1,
+            "numero": "102"
+        }
+    },
+    {
+        "model": "reservaciones.cuarto",
+        "pk": 3,
+        "fields": {
+            "tipo": 2,
+            "numero": "201"
+        }
+    },
+    {
+        "model": "reservaciones.cuarto",
+        "pk": 4,
+        "fields": {
+            "tipo": 2,
+            "numero": "202"
+        }
+    },
+    {
+        "model": "reservaciones.cuarto",
+        "pk": 5,
+        "fields": {
+            "tipo": 3,
+            "numero": "301"
+        }
+    },
+    {
+        "model": "reservaciones.cuarto",
+        "pk": 6,
+        "fields": {
+            "tipo": 3,
+            "numero": "302"
+        }
+    }
+]

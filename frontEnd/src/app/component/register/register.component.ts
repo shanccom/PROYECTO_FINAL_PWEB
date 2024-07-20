@@ -20,7 +20,7 @@ export class RegisterComponent {
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      password2: ['', Validators.required]  // Cambia 'confirmPassword' a 'password2'
+      password2: ['', Validators.required] 
     });
   }
 
@@ -29,12 +29,12 @@ export class RegisterComponent {
       this.authService.register(this.registerForm.value).subscribe(
         response => {
           console.log('Registration successful', response);
-            this.router.navigate(['/home']);
-
+          // Guardar el token y actualizar el estado de autenticación
+          this.authService.setSession(response.token); 
+          this.router.navigate(['/home']);
         },
         error => {
           console.error('Registration error', error);
-          // Aquí puedes mostrar un mensaje de error
         }
       );
     }
