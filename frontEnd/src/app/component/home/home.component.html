@@ -1,0 +1,13 @@
+
+<div *ngIf="isAuthenticated; else loggedOutContent">
+<h1>Welcome to the Home Page</h1>
+<p>You are logged in.</p>
+<button (click)="logout()">Cerrar sesión</button>
+<!-- Agrega aquí el contenido que debe ser visible para los usuarios autenticados -->
+</div>
+
+<ng-template #loggedOutContent>
+<h1>Welcome to the Home Page</h1>
+<p>Please log in to see more content.</p>
+<!-- Agrega aquí el contenido que debe ser visible para los usuarios no autenticados -->
+</ng-template>
