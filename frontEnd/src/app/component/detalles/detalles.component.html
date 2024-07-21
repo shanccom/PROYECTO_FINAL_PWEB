@@ -1,0 +1,7 @@
+<!-- Verifica si hay datos disponibles y muestra solo el primer dato -->
+<div *ngIf="tiposDeCuartos.length > 0">
+  <h2>Primer Tipo de Cuarto:</h2>
+  <p>Nombre: {{ tiposDeCuartos[obtenerID() - 1].nombre }}</p>
+  <p>Descripción: {{ tiposDeCuartos[obtenerID() - 1].descripcion }}</p>
+  <!-- Puedes añadir más campos según la estructura del objeto tipoDeCuarto -->
+</div>

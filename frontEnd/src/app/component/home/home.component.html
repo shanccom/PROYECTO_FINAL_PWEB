@@ -11,11 +11,14 @@
                         <h2>Tipo {{ tipo.id }}</h2>
                         <p>Nombre: {{ tipo.nombre }}</p>
                         <p>Precio: {{ tipo.precio_por_noche | currency }}</p>
-                        <p>Descripción: {{ tipo.descripcion }}</p> 
+                        <p>Descripción: {{ tipo.descripcion }}</p>
+                        <button (click)="onTipoSeleccionado(tipo.id)">reservar</button>
+                        
                     </li>
                 </ul>
         
         </div>
+        
     </div>
 </div>
 

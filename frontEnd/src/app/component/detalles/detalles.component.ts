@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,26 +6,23 @@ import { ReservasService } from '../../services/reservas/reservas.service';
 import { CuartoService } from '../../services/cuarto/cuarto.service';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-detalles',
   standalone: true,
   imports: [CommonModule, RouterModule, RouterOutlet],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './detalles.component.html',
+  styleUrls: ['./detalles.component.css']
 })
-export class HomeComponent implements OnInit {
+export class DetallesComponent implements OnInit {
   public tiposDeCuartos: any[] = [];
   public cuartosDisponibles: any[] = [];
-  public selectedTipoId: number | null = null;
-  public cuartoSeleccionado: any | null = null;
-  dato: number = 0 ;
-  
+  public elid: number = 0;
   isAuthenticated = false;
   reservas: any[] = [];
 
-  constructor(private authService: AuthService, private cuartoService: CuartoService, private router: Router) { }
+  constructor(private authService: AuthService, private cuartoService: CuartoService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.authService.isLoggedIn().subscribe(isLoggedIn => {
@@ -33,6 +30,10 @@ export class HomeComponent implements OnInit {
       if (this.isAuthenticated) {
         this.loadTiposDeCuartos();
       }
+    });
+    this.route.params.subscribe(params => {
+      this.elid = params['id'];
+      this.loadTiposDeCuartos = this.tiposDeCuartos.find(t => t.id === this.elid);
     });
   }
   logout(): void {
@@ -51,9 +52,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  onTipoSeleccionado(id: number) {
-    this.router.navigate(['/detalles', id]);
+  obtenerID(): number{
+    return this.elid;
   }
-
-  
 }

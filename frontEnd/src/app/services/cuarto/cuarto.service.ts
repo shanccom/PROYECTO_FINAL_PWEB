@@ -10,6 +10,7 @@ export class CuartoService {
   private tiposApiUrl = `${this.apiUrl}tipos/`; 
   private cuartosApiUrl = `${this.apiUrl}cuartos/`;
 
+
   constructor(private http: HttpClient) {}
 
   // Obtener tipos de cuartos
@@ -20,5 +21,9 @@ export class CuartoService {
   // Obtener cuartos disponibles para reservar según el tipo
   getCuartosDisponibles(tipoId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.cuartosApiUrl}?tipo=${tipoId}`);
+  }
+
+  getTipoDeCuartoById(id: number): Observable<any> {
+    return this.http.get(`${this.tiposApiUrl}/tipos-de-cuart/${id}`);
   }
 }
