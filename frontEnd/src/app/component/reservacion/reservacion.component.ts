@@ -3,7 +3,6 @@ import { ReservacionService } from '../../services/reservacion.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -24,6 +23,7 @@ export class ReservacionComponent {
 
   constructor(private reservacionService: ReservacionService, private router: Router, private http: HttpClient) { }
 
+  
   onSubmit() {
     this.reservacionService.createReservacion(this.reservacion).subscribe(response => {
       console.log('Reservación creada', response);
@@ -32,11 +32,5 @@ export class ReservacionComponent {
       console.error('Error al crear la reservación', error);
     });
   }
-
-  
-  getReservacionById(id: number): Observable<any> {
-    return this.http.get(`http://127.0.0.1:8000/reservaciones/${id}/`);
-  }
-
   
 }

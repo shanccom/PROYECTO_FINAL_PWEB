@@ -25,24 +25,49 @@ export class ImprimirComponent {
 
   constructor(private reservacionService: ReservacionService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    // Obtén el ID de la reservación de la URL
+  ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const reservacionId = params.get('id');
-      console.log('ID de reservación:', reservacionId); // Depuración
+      console.log('ID de reservación:', reservacionId);
 
-      // Verifica que el ID sea un númer
       if (reservacionId && !isNaN(Number(reservacionId))) {
-        // Obtén los datos de la reservación
         this.reservacionService.getReservacionById(+reservacionId).subscribe({
           next: data => {
+            console.log('Datos de la reservación:', data);
+
             this.data = {
               titulo: 'Reserva de Cuarto',
-              usuario: data.usuario,
-              cuarto: data.cuarto,
               fecha_inicio: data.fecha_inicio,
               fecha_fin: data.fecha_fin
             };
+
+            if (data.usuario) {
+              this.reservacionService.getUserById(data.usuario).subscribe({
+                next: user => {
+                  console.log('Datos del usuario:', user);
+                  this.data.usuario = user.username;
+                },
+                error: error => {
+                  console.error('Error al obtener el usuario', error);
+                }
+              });
+            } else {
+              console.error('ID de usuario no proporcionado');
+            }
+
+            if (data.cuarto) {
+              this.reservacionService.getCuartoById(data.cuarto).subscribe({
+                next: cuarto => {
+                  console.log('Datos del cuarto:', cuarto);
+                  this.data.cuarto = cuarto.numero; // Asegúrate de que `numero` sea el campo correcto
+                },
+                error: error => {
+                  console.error('Error al obtener el cuarto', error);
+                }
+              });
+            } else {
+              console.error('ID de cuarto no proporcionado');
+            }
           },
           error: error => {
             console.error('Error al obtener los datos de la reservación', error);

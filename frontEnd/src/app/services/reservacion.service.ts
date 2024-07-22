@@ -23,7 +23,16 @@ export class ReservacionService {
   }
 
   getReservacionById(id: number): Observable<any> {
-    const url = `${this.apiUrl}${id}/`;  // Asegúrate de que no haya doble barra
+    const url = `${this.apiUrl}${id}/`;
     return this.http.get(url);
   }
+
+  getUserById(userId: number): Observable<any> {
+    return this.http.get<any>(`http://127.0.0.1:8000/usuarios/usuarios/${userId}/`); // Asegúrate de que esta URL sea correcta
+  }
+
+  getCuartoById(tipoId: number): Observable<any> {
+    return this.http.get<any>(`http://127.0.0.1:8000/reservaciones/cuartos/${tipoId}/`); // Asegúrate de que esta URL sea correcta
+  }
+
 }

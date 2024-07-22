@@ -33,3 +33,8 @@ class LoginSerializer(serializers.Serializer):
         if user is None:
             raise serializers.ValidationError("Invalid credentials")
         return user
+    
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = '__all__'

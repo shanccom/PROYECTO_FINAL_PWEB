@@ -1,8 +1,10 @@
 from rest_framework import status
+from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
-from .serializers import RegisterSerializer, LoginSerializer
+from .serializers import RegisterSerializer, LoginSerializer, UsuarioSerializer
+from .models import Usuario
 
 class RegisterAPIView(APIView):
     def post(self, request):
@@ -20,3 +22,7 @@ class LoginAPIView(APIView):
             token, created = Token.objects.get_or_create(user=user)
             return Response({'token': token.key})
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
