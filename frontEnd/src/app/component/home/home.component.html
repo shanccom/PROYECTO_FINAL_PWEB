@@ -1,29 +1,55 @@
+<body>
+    <div *ngIf="isAuthenticated; else loggedOutContent" class="home-page">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Enjoy Your Dream Vacation</h1>
+                <p>The Seaside Hotel is the perfect place for visitors who want to enjoy a combination of charm, peace, and comfort.</p>
+                <button class="reservar-ahora">Visista Nuestros Cuarto</button>
+                <div></div>
+            </div>
+        </header>
 
-<div *ngIf="isAuthenticated; else loggedOutContent">
-    <h1>Welcome to the Home Page</h1>
-        <p>You are logged in.</p>
-    <button (click)="logout()">Cerrar sesión</button>
-    <div class="reservas-container">
-        <div>
-            <h1>Tipos de Cuartos</h1>
-                <ul>
-                    <li *ngFor="let tipo of tiposDeCuartos" (click)="onTipoSeleccionado(tipo.id)">
-                        <h2>Tipo {{ tipo.id }}</h2>
-                        <p>Nombre: {{ tipo.nombre }}</p>
+        <section class="info-bar">
+            <div class="info-item">
+                <p>Nos encuentras de</p>
+                <p>Lunes - Sabado: 08:00 - 18:00</p>
+            </div>
+            <div class="info-item">
+                <p>Ubicanos</p>
+                <p>Cayma-Arequipa-Peru</p>
+            </div>
+            <div class="info-item">
+                <p>Customer Support</p>
+                <p>+123 456 7890</p>
+            </div>
+        </section>
+
+        <section class="reservas-container">
+            <h1>Rooms</h1>
+            <p>Ahorre con una tarifa para socios de Marriott Bonvoy</p>
+            <div class="room-list">
+                <div *ngFor="let tipo of tiposDeCuartos" class="room-item" (click)="onTipoSeleccionado(tipo.id)">
+                    <img  alt="{{ tipo.nombre }}">
+                    <div class="room-details">
+                        <h2>{{ tipo.nombre }}</h2>
                         <p>Precio: {{ tipo.precio_por_noche | currency }}</p>
-                        <p>Descripción: {{ tipo.descripcion }}</p>
-                        <button (click)="onTipoSeleccionado(tipo.id)">reservar</button>
-                        
-                    </li>
-                </ul>
-        
-        </div>
-        
-    </div>
-</div>
+                        <button class="ver-mas" (click)="onTipoSeleccionado(tipo.id)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<ng-template #loggedOutContent>
-<h1>Welcome to the Home Page</h1>
-<p>Please log in to see more content.</p>
-<!-- Agrega aquí el contenido que debe ser visible para los usuarios no autenticados -->
-</ng-template>
+
+        <section class="testimonials">
+            <h2>Testimonials</h2>
+            <blockquote>
+                <p>They were extremely accommodating and allowed us to check in early at like 10am. We got to hotel super early and I didn’t wanna wait. So this was a big plus. The service was exceptional as well. Would definitely send a friend there.</p>
+                <cite>Dennis Mowensley, Customer</cite>
+            </blockquote>
+        </section>
+    </div>
+
+    <ng-template #loggedOutContent>
+    </ng-template>
+</body>
+

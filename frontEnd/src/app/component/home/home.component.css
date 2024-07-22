@@ -1,0 +1,159 @@
+
+.home-page {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero {
+    color: white;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.reservar-ahora {
+    background-color: #d4a158;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.info-bar {
+    background-color: #d4a158;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-item p {
+    margin: 5px 0;
+}
+
+.reservas-container {
+    margin: 50px 0;
+}
+
+.reservas-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.room-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin: 20px;
+    width: 45%;
+    text-align: left;
+}
+
+.room-item img {
+    width: 100%;
+    height: auto;
+}
+
+.room-details {
+    padding: 15px;
+}
+
+.room-details h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.room-details p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.ver-mas {
+    background-color: #d4a158;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.luxury-experience {
+    background-color: #e0d5c2;
+    padding: 50px 20px;
+}
+
+.luxury-experience h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.luxury-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.luxury-content img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.book-now {
+    background-color: #d4a158;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.testimonials {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.testimonials blockquote {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.testimonials cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 1em;
+    color: #d4a158;
+}

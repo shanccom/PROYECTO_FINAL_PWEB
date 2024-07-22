@@ -13,8 +13,8 @@ export class ReservasService {
   constructor(private http: HttpClient) { }
 
   // Método para obtener todas las reservas
-  obtenerReservas(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  obtenerReservas(): Observable<Date[]> {
+    return this.http.get<Date[]>(this.apiUrl);
   }
 
   // Método para crear una nueva reserva

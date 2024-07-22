@@ -23,7 +23,4 @@ export class CuartoService {
     return this.http.get<any[]>(`${this.cuartosApiUrl}?tipo=${tipoId}`);
   }
 
-  getTipoDeCuartoById(id: number): Observable<any> {
-    return this.http.get(`${this.tiposApiUrl}/tipos-de-cuart/${id}`);
-  }
 }
