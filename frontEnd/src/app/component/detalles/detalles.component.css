@@ -1,84 +1,49 @@
-
 .room-detail-container {
-    background-color: white;
-    width: 50%;
-    margin: 50px auto;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
     padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .room-detail {
+    position: relative;
+  }
+  
+  .room-image-container {
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-.room-detail-container h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.room-detail p {
-    font-size: 1.2em;
-    color: #555;
+  }
+  
+  .room-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .room-title-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .room-title-overlay h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .room-info {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .room-info p {
     margin: 10px 0;
-}
-
-.room-detail p strong {
-    color: #333;
-}
-
-.confirmar-reserva {
-    background-color: #d4a158;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    margin-top: 20px;
-    text-decoration: none;
-}
-
-.confirmar-reserva:hover {
-    background-color: #b38640;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-/* Class to trigger fade-out animation */
-.fadeOut {
-    animation: fadeOut 1s forwards;
-}
-
-.exit {
-    background-color: #d45858;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    margin-right: 20px;
-    margin-top: 20px;
-    text-decoration: none;
-}
+    font-size: 18px;
+  }

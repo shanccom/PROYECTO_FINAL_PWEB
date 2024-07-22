@@ -1,40 +1,33 @@
-/* Estilos para el contenedor de botones */
-.button-container {
+.thank-you-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
-    margin-top: 50px;
-}
-
-/* Estilos básicos para los botones */
-.animated-button {
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #b2e9ff; /* Color de fondo */
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .animated-button {
     padding: 10px 20px;
-    font-size: 16px;
+    background-color: #ff5722; /* Color del botón */
+    color: white;
     border: none;
     border-radius: 5px;
-    background-color: #e4bf45;
-    color: white;
     cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: fadeIn 1s ease-out;
-}
-
-/* Efecto hover para los botones */
-.animated-button:hover {
-    background-color: #d4a158;
-    transform: scale(1.05);
-}
-
-/* Animación de aparición */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .animated-button:hover {
+    background-color: #e64a19; /* Color del botón al pasar el mouse */
+  }

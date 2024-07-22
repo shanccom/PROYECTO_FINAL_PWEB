@@ -72,4 +72,9 @@ export class AuthService {
   getAuthenticatedUser(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}usuarios/`);
   }
+
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}usuarios/`);
+  }
+
 }

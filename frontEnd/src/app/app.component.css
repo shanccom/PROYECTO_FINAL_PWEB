@@ -1,6 +1,9 @@
-.ja {
-    background-color: #f8f2e8;
+body {
+    background: linear-gradient(135deg, #a8e0e0, #71c5c5);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
 }

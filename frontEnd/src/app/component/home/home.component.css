@@ -1,189 +1,175 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
 .home-page {
-    width: 80%;
-    margin: 0 auto;
-    opacity: 0; /* Initial state for animation */
-    animation: fadeIn 1.5s forwards; /* Animation applied */
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
 .hero {
-    background: #555;
-    color: white;
-    padding: 100px 0;
-    animation: fadeIn 1s forwards 0.5s;
+    padding: 100px;
+    text-align: center;
 }
 
-.hero-content {
-    max-width: 600px;
-    margin: 0 auto;
+.hero-content h1 {
+    font-size: 2.5em;
+    color: #333;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.hero p {
+.hero-content p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    color: #666;
 }
 
-.reservar-ahora {
-    background-color: #d4a158;
+.cta-button {
+    background-color: #1E90FF;
     color: white;
-    padding: 10px 20px;
     border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
     cursor: pointer;
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
-.reservar-ahora:hover {
-    transform: translateY(-5px);
+.cta-button:hover {
+    background-color: #00BFFF;
 }
 
 .info-bar {
-    background-color: #d4a158;
-    color: white;
-    padding: 20px 0;
     display: flex;
     justify-content: space-around;
+    background: #c6fcff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
-.info-item p {
-    margin: 5px 0;
+.info-item {
+    text-align: center;
 }
 
 .reservas-container {
-    margin: 50px 0;
-}
-
-.reservas-container h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
+    margin-top: 40px;
 }
 
 .room-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; 
 }
 
 .room-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    margin: 20px;
-    width: 45%;
-    text-align: left;
-    transition: transform 0.3s ease;
-}
-
-.room-item:hover {
-    transform: scale(1.02);
+    align-content: center;
+    background: #abe0ff;
+    padding: 10px;
+    margin: 15px;
+    width: calc(50% - 20px); /* Dos elementos por fila con espacio para el margen */
+    text-align: center;
+    box-sizing: border-box; 
 }
 
 .room-item img {
-    width: 100%;
-    height: auto;
-}
-
-.room-details {
-    padding: 15px;
-}
-
-.room-details h2 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.room-details p {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.ver-mas {
-    background-color: #d4a158;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.ver-mas:hover {
-    transform: translateY(-5px);
-}
-
-.luxury-experience {
-    background-color: #e0d5c2;
-    padding: 50px 20px;
-}
-
-.luxury-experience h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.luxury-content {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.luxury-content img {
-    width: 30%;
+    max-width: 100%;
     border-radius: 5px;
 }
 
-.book-now {
-    background-color: #d4a158;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
+.room-details h2 {
+    color: #1E90FF;
 }
 
-.book-now:hover {
-    transform: translateY(-5px);
+.ver-mas {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.ver-mas:hover {
+    background-color: #00BFFF;
 }
 
 .testimonials {
-    background-color: #333;
-    color: white;
-    padding: 50px 20px;
-}
-
-.testimonials h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    padding: 20px;
+    background: #c2fcf2;
 }
 
 .testimonials blockquote {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.2em;
     font-style: italic;
+    color: #555;
 }
 
 .testimonials cite {
     display: block;
     margin-top: 10px;
-    font-size: 1em;
-    color: #d4a158;
+    font-weight: bold;
+    color: #333;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
+.reservas-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .room-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .room-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px; /* Define un ancho fijo para cada item */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .room-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .room-item img {
+    width: 100%; /* La imagen tomará el ancho del contenedor */
+    height: 200px; /* Define una altura fija para las imágenes */
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones y llene el contenedor */
+  }
+  
+  .room-details {
+    padding: 10px;
+  }
+  
+  .room-details h2 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
+  .room-details p {
+    margin: 5px 0;
+  }
+  
+  .ver-mas {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ver-mas:hover {
+    background-color: #0056b3;
+  }

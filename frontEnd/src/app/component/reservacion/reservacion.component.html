@@ -1,12 +1,29 @@
-<form (ngSubmit)="onSubmit()">
-  <label for="usuario">Usuario:</label>
-  <input type="text" id="usuario" [(ngModel)]="reservacion.usuario" name="usuario" required>
+<div class="container">
+  <div class="user-list">
+    <h3>Usuarios:</h3>
+    <ul>
+      <li>
+        <span class="cell id">ID</span>
+        <span class="cell username">Nombre de Usuario</span>
+      </li>
+      <li *ngFor="let user of usuarios">
+        <span class="cell id">{{ user.id }}</span>
+        <span class="cell username">{{ user.username }}</span>
+      </li>
+    </ul>
+  </div>
 
-  <label for="fecha_inicio">Fecha de Inicio:</label>
-  <input type="datetime-local" id="fecha_inicio" [(ngModel)]="reservacion.fecha_inicio" name="fecha_inicio" required>
+  <form (ngSubmit)="onSubmit()" class="reservation-form">
+    <label for="usuario">INGRESE EL ID DEL USUARIO</label>
+    <input type="text" id="usuario" [(ngModel)]="reservacion.usuario" name="usuario" required>
 
-  <label for="fecha_fin">Fecha de Fin:</label>
-  <input type="datetime-local" id="fecha_fin" [(ngModel)]="reservacion.fecha_fin" name="fecha_fin" required>
+    <label for="fecha_inicio">FECHA DE INICIO</label>
+    <input type="datetime-local" id="fecha_inicio" [(ngModel)]="reservacion.fecha_inicio" name="fecha_inicio" required>
 
-  <button type="submit">Hacer Reservación</button>
-</form>
+    <label for="fecha_fin">FECHA DE FIN</label>
+    <input type="datetime-local" id="fecha_fin" [(ngModel)]="reservacion.fecha_fin" name="fecha_fin" required>
+
+    <button type="submit">HACER RESERVACION</button>
+    <button class="exit" [routerLink]="['/home']">ATRAS</button>
+  </form>
+</div>

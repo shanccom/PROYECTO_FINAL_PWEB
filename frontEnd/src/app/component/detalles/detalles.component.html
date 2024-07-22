@@ -1,14 +1,15 @@
-
 <div class="room-detail-container animated fadeIn" *ngIf="tiposDeCuartos.length > 0">
   <div class="room-detail">
-      <h2><p><strong>Nombre:</strong> {{ tiposDeCuartos[obtenerID() - 1].nombre }}</p></h2>
+    <div class="room-image-container">
+      <img [src]="tiposDeCuartos[obtenerID() - 1].imagen" alt="{{ tiposDeCuartos[obtenerID() - 1].nombre }}" class="room-image"/>
+      <div class="room-title-overlay">
+        <h2>{{ tiposDeCuartos[obtenerID() - 1].nombre }}</h2>
+      </div>
+    </div>
+    <div class="room-info">
       <p><strong>Descripción:</strong> {{ tiposDeCuartos[obtenerID() - 1].descripcion }}</p>
-      <p><strong>Precio</strong> {{ tiposDeCuartos[obtenerID() - 1].precio_por_noche }}</p>
-      <p><strong>Imagen del cuarto</strong> {{ tiposDeCuartos[obtenerID() - 1].url }}</p>
+      <p><strong>Precio:</strong> {{ tiposDeCuartos[obtenerID() - 1].precio_por_noche }}</p>
+    </div>
   </div>
-  <button class="confirmar-reserva" [routerLink]="['/imprimir']">Confirmar reserva</button>
-  
-  <button class="exit" [routerLink]="['/home']">Atras</button>
 </div>
 <app-reservacion [cuartoId]="cuartoId"></app-reservacion>
-

@@ -1,61 +1,56 @@
-
 <body>
     <div *ngIf="isAuthenticated; else loggedOutContent" class="home-page fade-in">
         <header class="hero">
             <div class="hero-content">
-                <h1>Disfrute de las vacaciones de sus sueños</h1>
-                <p> El Seaside Hotel es el lugar perfecto para los visitantes que quieran disfrutar de una combinación de encanto, paz y confort.</p>
-                <p class="reservar-ahora">Visita Nuestros Cuartos</p>
-                
+                <h1>DISFRUTE DE LAS VACACIONES DE SUS SUEÑOS</h1>
+                <p>El Seaside Hotel es el lugar perfecto para los visitantes que quieran disfrutar de una combinación de encanto, paz y confort.</p>
             </div>
         </header>
 
         <section class="info-bar">
             <div class="info-item">
                 <p>Nos encuentras de</p>
-                <p>Lunes - Sabado: 08:00 - 18:00</p>
+                <p>Lunes - Sábado: 08:00 - 18:00</p>
             </div>
             <div class="info-item">
-                <p>Ubicanos</p>
-                <p>Cayma-Arequipa-Peru</p>
+                <p>Ubícanos</p>
+                <p>Cayma-Arequipa-Perú</p>
             </div>
             <div class="info-item">
-                <p>Customer Support</p>
+                <p>Soporte al Cliente</p>
                 <p>+123 456 7890</p>
             </div>
         </section>
 
         <section class="reservas-container">
-            <h1>Rooms</h1>
-            <p>Ahorre con una tarifa para socios de Marriott Bonvoy</p>
+            <h1>HABITACIONES</h1>
             <div class="room-list">
-                <div *ngFor="let tipo of tiposDeCuartos" class="room-item" (click)="onTipoSeleccionado(tipo.id)">
-                    <img src="{{tipo.url}}" alt="{{ tipo.nombre }}">
-                    <div class="room-details">
-                        <h2>{{ tipo.nombre }}</h2>
-                        <p>Precio: {{ tipo.precio_por_noche | currency }}</p>
-                        <button class="ver-mas" (click)="onTipoSeleccionado(tipo.id)">Ver más</button>
-                    </div>
+              <div *ngFor="let tipo of tiposDeCuartos" class="room-item" (click)="onTipoSeleccionado(tipo.id)">
+                <img [src]="tipo.imagen" alt="{{ tipo.nombre }}">
+                <div class="room-details">
+                  <h2>{{ tipo.nombre }}</h2>
+                  <p>Precio: {{ tipo.precio_por_noche | currency }}</p>
+                  <button class="ver-mas" (click)="onTipoSeleccionado(tipo.id)">Ver más</button>
                 </div>
+              </div>
             </div>
-        </section>
+          </section>
 
         <section class="testimonials">
-            <h2>Testimonials</h2>
+            <h2>Testimonios</h2>
             <blockquote>
                 <p>They were extremely accommodating and allowed us to check in early at like 10am. We got to hotel super early and I didn’t wanna wait. So this was a big plus. The service was exceptional as well. Would definitely send a friend there.</p>
                 <cite>Dennis Mowensley, Customer</cite>
             </blockquote>
         </section>
+
         <section class="info-bar">
             <div>
-                <button class="reservar-ahora" (click)="logout()">Cerrar sesion</button>
+                <button class="reservar-ahora" (click)="logout()">Cerrar sesión</button>
             </div>
         </section>
-        
     </div>
 
     <ng-template #loggedOutContent>
     </ng-template>
 </body>
-

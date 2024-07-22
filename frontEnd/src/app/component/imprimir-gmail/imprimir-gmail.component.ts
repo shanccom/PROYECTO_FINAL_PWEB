@@ -4,6 +4,7 @@ import jsPDF from 'jspdf';
 import { ReservacionService } from '../../services/reservacion.service';
 import { ActivatedRoute } from '@angular/router';
 import { ReservacionComponent } from '../reservacion/reservacion.component';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-imprimir',
@@ -12,7 +13,7 @@ import { ReservacionComponent } from '../reservacion/reservacion.component';
   templateUrl: './imprimir-gmail.component.html',
   styleUrls: ['./imprimir-gmail.component.css']
 })
-export class ImprimirComponent {
+export class ImprimirComponent implements OnInit {
 
   // Datos que se mostrarán en el PDF
   data: any = {
@@ -46,6 +47,7 @@ export class ImprimirComponent {
                 next: user => {
                   console.log('Datos del usuario:', user);
                   this.data.usuario = user.username;
+                  this.checkAndGeneratePDF();
                 },
                 error: error => {
                   console.error('Error al obtener el usuario', error);
@@ -53,6 +55,7 @@ export class ImprimirComponent {
               });
             } else {
               console.error('ID de usuario no proporcionado');
+              this.checkAndGeneratePDF();
             }
 
             if (data.cuarto) {
@@ -60,6 +63,7 @@ export class ImprimirComponent {
                 next: cuarto => {
                   console.log('Datos del cuarto:', cuarto);
                   this.data.cuarto = cuarto.numero; // Asegúrate de que `numero` sea el campo correcto
+                  this.checkAndGeneratePDF();
                 },
                 error: error => {
                   console.error('Error al obtener el cuarto', error);
@@ -67,6 +71,7 @@ export class ImprimirComponent {
               });
             } else {
               console.error('ID de cuarto no proporcionado');
+              this.checkAndGeneratePDF();
             }
           },
           error: error => {
@@ -79,7 +84,13 @@ export class ImprimirComponent {
     });
   }
 
-  generatePDF() {
+  private checkAndGeneratePDF(): void {
+    if (this.data.usuario && this.data.cuarto) {
+      this.generatePDF();
+    }
+  }
+
+  private generatePDF(): void {
     const doc = new jsPDF();
 
     doc.text(this.data.titulo, 10, 10);
@@ -88,25 +99,7 @@ export class ImprimirComponent {
     doc.text(`Fecha de Inicio: ${this.data.fecha_inicio}`, 10, 40);
     doc.text(`Fecha de Fin: ${this.data.fecha_fin}`, 10, 50);
 
-    doc.save('reserva.pdf');
+    doc.save('Reservacion.pdf');
   }
-
-  private getPDFBase64(): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const doc = new jsPDF();
-      doc.text(this.data.titulo, 10, 10);
-      doc.text(`Usuario: ${this.data.usuario}`, 10, 20);
-      doc.text(`Cuarto: ${this.data.cuarto}`, 10, 30);
-      doc.text(`Fecha de Inicio: ${this.data.fecha_inicio}`, 10, 40);
-      doc.text(`Fecha de Fin: ${this.data.fecha_fin}`, 10, 50);
-
-      const pdfOutput = doc.output('datauristring');
-      const base64PDF = pdfOutput.split(',')[1]; // Extrae la parte base64 del data URI
-      resolve(base64PDF);
-    });
-  }
-
-  gmail(){}
 
 }
-

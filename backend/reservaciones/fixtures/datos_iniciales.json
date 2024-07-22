@@ -5,7 +5,8 @@
         "fields": {
             "nombre": "Suite Deluxe",
             "descripcion": "Una suite de lujo con todas las comodidades.",
-            "precio_por_noche": "200.00"
+            "precio_por_noche": "200.00",
+            "imagen": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
         }
     },
     {
@@ -14,7 +15,8 @@
         "fields": {
             "nombre": "Habitación Estándar",
             "descripcion": "Habitación cómoda y funcional.",
-            "precio_por_noche": "100.00"
+            "precio_por_noche": "100.00",
+            "imagen": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
         }
     },
     {
@@ -23,7 +25,8 @@
         "fields": {
             "nombre": "Suite Ejecutiva",
             "descripcion": "Suite con espacio adicional para trabajar.",
-            "precio_por_noche": "150.00"
+            "precio_por_noche": "150.00",
+            "imagen": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
         }
     },
     {

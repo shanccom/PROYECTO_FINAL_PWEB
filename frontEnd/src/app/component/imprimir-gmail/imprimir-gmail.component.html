@@ -1,6 +1,7 @@
-<div class="button-container">
-  <button class="animated-button" (click)="generatePDF()">Imprimir PDF</button>
-  <button class="animated-button" (click)="gmail()">Enviar a Correo</button>
-  <button class="animated-button" (click)="generatePDF(); gmail()">Ambos</button>
-  <button class="animated-button" [routerLink]="['/home']">Atras</button>
+
+<div class="thank-you-container">
+  <h1>¡LA RESERVACION HA SIDO GUARDADA - SE IMPRIMIRA LO DATOS DEL HUESPED!</h1>
+  <div class="button-container">
+    <button class="animated-button" [routerLink]="['/home']">ATRAS</button>
+  </div>
 </div>

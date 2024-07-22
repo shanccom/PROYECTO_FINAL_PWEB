@@ -1,16 +1,18 @@
+
 <div class="login-container fade-in">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <h2 class="fade-in">Iniciar sesion</h2>
-      <div class="form-group fade-in">
-          <label for="username">Nombre de usuario</label>
-          <input id="username" formControlName="username" type="text" />
-      </div>
-      <div class="form-group fade-in">
-          <label for="password">Password</label>
-          <input id="password" formControlName="password" type="password" />
-      </div>
-      <button type="submit" class="login-btn fade-in">Iniciar sesion</button>
-      <button type="button" class="register-btn fade-in" (click)="goToRegister()">Registrar</button>
-      <div *ngIf="errorMessage" class="error fade-in">{{ errorMessage }}</div>
-  </form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h2 class="fade-in">INICIAR SESION</h2>
+        <div class="form-group fade-in">
+            <label for="username">USERNAME</label>
+            <input id="username" formControlName="username" type="text" />
+        </div>
+        <div class="form-group fade-in">
+            <label for="password">PASSWORD</label>
+            <input id="password" formControlName="password" type="password" />
+        </div>
+        <button type="submit" class="login-btn fade-in">INICIA SESION</button>
+        <button type="button" class="register-btn fade-in" (click)="goToRegister()">REGISTRARSE</button>
+        <div *ngIf="errorMessage" class="error fade-in">{{ errorMessage }}</div>
+    </form>
 </div>
+

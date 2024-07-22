@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth/auth.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-reservacion',
   standalone: true,
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './reservacion.component.html',
   styleUrl: './reservacion.component.css'
 })
@@ -25,10 +26,11 @@ export class ReservacionComponent implements OnInit {
 
   @Input() cuartoId: string = ""; // Asegúrate de que esta propiedad se reciba correctamente
 
+  usuarios: any[] = []; 
+
   constructor(
     private reservacionService: ReservacionService,
     private router: Router,
-    private http: HttpClient,
     private authService: AuthService
   ) {}
 
@@ -45,7 +47,18 @@ export class ReservacionComponent implements OnInit {
         console.error('Error al obtener el usuario autenticado', error);
       }
     });
-  
+
+    // Obtener todos los usuarios
+    this.authService.getAllUsers().subscribe({
+      next: users => {
+        this.usuarios = users;
+      },
+      error: error => {
+        console.error('Error al obtener los usuarios', error);
+      }
+    });
+
+
     // Asignar el cuartoId a la reservación
     if (this.cuartoId) {
       this.reservacion.cuarto = this.cuartoId;
