@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-imprimir',
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './imprimir-gmail.component.html',
   styleUrls: ['./imprimir-gmail.component.css']
 })

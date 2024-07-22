@@ -1,10 +1,13 @@
-<body>
-  <div class="room-detail-container" *ngIf="tiposDeCuartos.length > 0">
-      <h2>Primer Tipo de Cuarto:</h2>
-      <div class="room-detail">
-          <p><strong>Nombre:</strong> {{ tiposDeCuartos[obtenerID() - 1].nombre }}</p>
-          <p><strong>Descripción:</strong> {{ tiposDeCuartos[obtenerID() - 1].descripcion }}</p>
-      </div>
-      <button class="confirmar-reserva" [routerLink]="['/imprimir']">Confirmar reserva</button>
+
+<div class="room-detail-container animated fadeIn" *ngIf="tiposDeCuartos.length > 0">
+  <div class="room-detail">
+      <h2><p><strong>Nombre:</strong> {{ tiposDeCuartos[obtenerID() - 1].nombre }}</p></h2>
+      <p><strong>Descripción:</strong> {{ tiposDeCuartos[obtenerID() - 1].descripcion }}</p>
+      <p><strong>Precio</strong> {{ tiposDeCuartos[obtenerID() - 1].precio_por_noche }}</p>
+      <p><strong>Imagen del cuarto</strong> {{ tiposDeCuartos[obtenerID() - 1].url }}</p>
   </div>
-</body>
+  <button class="confirmar-reserva" [routerLink]="['/imprimir']">Confirmar reserva</button>
+  
+  <button class="exit" [routerLink]="['/home']">Atras</button>
+
+</div>

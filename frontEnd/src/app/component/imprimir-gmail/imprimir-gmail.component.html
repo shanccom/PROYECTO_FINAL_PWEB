@@ -1,7 +1,6 @@
-<div>
-    
-    <button (click)="generatePDF()">Imprimir PDF</button>
-    <button (click)="gmail()">Enviar a Correo</button>
-    <button (click)="generatePDF()" (click)="gmail()"> Ambos</button>
-  </div>
-  
+<div class="button-container">
+  <button class="animated-button" (click)="generatePDF()">Imprimir PDF</button>
+  <button class="animated-button" (click)="gmail()">Enviar a Correo</button>
+  <button class="animated-button" (click)="generatePDF(); gmail()">Ambos</button>
+  <button class="animated-button" [routerLink]="['/home']">Atras</button>
+</div>

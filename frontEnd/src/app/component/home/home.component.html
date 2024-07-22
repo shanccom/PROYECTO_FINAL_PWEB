@@ -1,11 +1,12 @@
+
 <body>
-    <div *ngIf="isAuthenticated; else loggedOutContent" class="home-page">
+    <div *ngIf="isAuthenticated; else loggedOutContent" class="home-page fade-in">
         <header class="hero">
             <div class="hero-content">
-                <h1>Enjoy Your Dream Vacation</h1>
-                <p>The Seaside Hotel is the perfect place for visitors who want to enjoy a combination of charm, peace, and comfort.</p>
-                <button class="reservar-ahora">Visista Nuestros Cuarto</button>
-                <div></div>
+                <h1>Disfrute de las vacaciones de sus sueños</h1>
+                <p> El Seaside Hotel es el lugar perfecto para los visitantes que quieran disfrutar de una combinación de encanto, paz y confort.</p>
+                <p class="reservar-ahora">Visita Nuestros Cuartos</p>
+                
             </div>
         </header>
 
@@ -29,7 +30,7 @@
             <p>Ahorre con una tarifa para socios de Marriott Bonvoy</p>
             <div class="room-list">
                 <div *ngFor="let tipo of tiposDeCuartos" class="room-item" (click)="onTipoSeleccionado(tipo.id)">
-                    <img  alt="{{ tipo.nombre }}">
+                    <img src="{{tipo.url}}" alt="{{ tipo.nombre }}">
                     <div class="room-details">
                         <h2>{{ tipo.nombre }}</h2>
                         <p>Precio: {{ tipo.precio_por_noche | currency }}</p>
@@ -39,7 +40,6 @@
             </div>
         </section>
 
-
         <section class="testimonials">
             <h2>Testimonials</h2>
             <blockquote>
@@ -47,6 +47,12 @@
                 <cite>Dennis Mowensley, Customer</cite>
             </blockquote>
         </section>
+        <section class="info-bar">
+            <div>
+                <button class="reservar-ahora" (click)="logout()">Cerrar sesion</button>
+            </div>
+        </section>
+        
     </div>
 
     <ng-template #loggedOutContent>
