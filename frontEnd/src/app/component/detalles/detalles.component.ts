@@ -20,23 +20,36 @@ export class DetallesComponent implements OnInit {
   public tiposDeCuartos: any[] = [];
   public cuartosDisponibles: any[] = [];
   public elid: number = 0;
+  cuartoId: string = "";
   isAuthenticated = false;
   reservas: any[] = [];
 
-  constructor(private authService: AuthService, private cuartoService: CuartoService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private authService: AuthService, 
+            private cuartoService: CuartoService, 
+            private router: Router, 
+            private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this.authService.isLoggedIn().subscribe(isLoggedIn => {
       this.isAuthenticated = isLoggedIn;
       if (this.isAuthenticated) {
         this.loadTiposDeCuartos();
       }
     });
+
     this.route.params.subscribe(params => {
       this.elid = params['id'];
       this.loadTiposDeCuartos = this.tiposDeCuartos.find(t => t.id === this.elid);
     });
+
+    this.route.params.subscribe(params => {
+      this.cuartoId = params['id'];
+      console.log('cuartoId en DetallesComponent:', this.cuartoId);
+    });
   }
+
+
   logout(): void {
     this.authService.logout();
   }  
@@ -55,5 +68,11 @@ export class DetallesComponent implements OnInit {
 
   obtenerID(): number{
     return this.elid;
+  }
+
+  obtenerIDString(): string {
+    const id = this.route.snapshot.paramMap.get('cuartoId') || '';
+    console.log('ID del cuarto en detalles:', id);
+    return id;
   }
 }

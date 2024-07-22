@@ -67,4 +67,9 @@ export class AuthService {
   isLoggedIn(): Observable<boolean> {
     return this.isAuthenticated.asObservable();
   }
+
+
+  getAuthenticatedUser(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}usuarios/`);
+  }
 }

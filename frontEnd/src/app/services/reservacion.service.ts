@@ -28,7 +28,7 @@ export class ReservacionService {
   }
 
   getUserById(userId: number): Observable<any> {
-    return this.http.get<any>(`http://127.0.0.1:8000/usuarios/usuarios/${userId}/`); // Asegúrate de que esta URL sea correcta
+    return this.http.get<any>(`http://127.0.0.1:8000/usuarios/usuarios/${userId}/`);
   }
 
   getCuartoById(tipoId: number): Observable<any> {
