@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from .models import Cuarto, TipoCuarto
-from .serializers import CuartoSerializer, TipoCuartoSerializer
+from .models import Cuarto, TipoCuarto, Reservacion
+from .serializers import CuartoSerializer, TipoCuartoSerializer, ReservacionSerializer
 
 class CuartoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Cuarto.objects.all()
@@ -21,3 +21,7 @@ class CuartoViewSet(viewsets.ReadOnlyModelViewSet):
 class TipoCuartoViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = TipoCuarto.objects.all()
     serializer_class = TipoCuartoSerializer
+
+class ReservacionViewSet(viewsets.ModelViewSet):
+    queryset = Reservacion.objects.all()
+    serializer_class = ReservacionSerializer

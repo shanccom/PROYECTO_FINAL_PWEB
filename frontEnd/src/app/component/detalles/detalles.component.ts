@@ -7,11 +7,12 @@ import { CuartoService } from '../../services/cuarto/cuarto.service';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { ReservacionComponent } from '../reservacion/reservacion.component';
 
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterOutlet],
+  imports: [CommonModule, RouterModule, RouterOutlet, ReservacionComponent],
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.css']
 })
